@@ -33,13 +33,13 @@ const App: React.FC = () => {
   return (
     <main>
       <Navbar />
-      <ErrorBoundary>
-        {/* Wrapping Routes with ErrorBoundary */}
-        <Routes>
-          {/* Rendering routes dynamically */}
-          {generateRoutes()}
-        </Routes>
-      </ErrorBoundary>
+      {/* <ErrorBoundary> */}
+      {/* Wrapping Routes with ErrorBoundary */}
+      <Routes>
+        {/* Rendering routes dynamically */}
+        {generateRoutes()}
+      </Routes>
+      {/* </ErrorBoundary> */}
     </main>
   );
 };
