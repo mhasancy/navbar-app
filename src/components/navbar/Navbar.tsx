@@ -13,7 +13,7 @@ const Navbar: React.FC<NavbarProps> = () => {
   const pages: string[] = ['home', 'about', 'blog', 'download', 'contact', 'games'];
 
   const handleScroll = () => {
-    const currentScrollPos: number = window.pageYOffset;
+    const currentScrollPos: number = window.scrollY;
     const isVisible: boolean = prevScrollPos > currentScrollPos || currentScrollPos < 10;
 
     setVisible(isVisible);
