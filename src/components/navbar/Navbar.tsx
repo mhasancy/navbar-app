@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import { Link, NavLink } from 'react-router-dom';
 
 import './Navbar.css';
@@ -12,18 +12,24 @@ const Navbar: React.FC<NavbarProps> = () => {
 
   const pages: string[] = ['home', 'about', 'blog', 'download', 'contact', 'games'];
 
-  const handleScroll = () => {
+  const handleScroll = useCallback(() => {
     const currentScrollPos: number = window.scrollY;
     const isVisible: boolean = prevScrollPos > currentScrollPos || currentScrollPos < 10;
 
     setVisible(isVisible);
     setPrevScrollPos(currentScrollPos);
-  };
+  }, [prevScrollPos]);
 
   useEffect(() => {
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, [prevScrollPos, visible]);
+    const scrollHandler = () => {
+      handleScroll();
+    };
+
+    window.addEventListener('scroll', scrollHandler);
+    return () => {
+      window.removeEventListener('scroll', scrollHandler);
+    };
+  }, [handleScroll]);
 
   const closeMenu = () => {
     if (menuOpen) {
