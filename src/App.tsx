@@ -11,7 +11,7 @@ import './global.css';
 
 // Route configuration
 const routeConfig: CustomRoute[] = [
-  { path: 'index', element: <Home /> },
+  { path: '/', element: <Home /> },
   { path: '/home', element: <Home /> },
   { path: '/about', element: <About /> },
   { path: '/blog', element: <Blog /> },
