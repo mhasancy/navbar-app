@@ -1,0 +1,28 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+/* Defining variables in :root for consistent use */
+:root {
+  --primary-color: #3db2dc;
+  --text-color: #343535;
+  --white-translucent: rgba(255, 255, 255, 0.9);
+  --box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  --font-base: 'Roboto', sans-serif;
+}
+
+h3 {
+  text-align: center;
+  margin: 20px 0;
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  scroll-behavior: smooth;
+  font-family: var(--font-base);
+}
+
+.page-container {
+  margin: 15px;
+  height: 150vh;
+}
