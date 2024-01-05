@@ -1,3 +1,4 @@
+import React from 'react';
 import { Routes, Route } from 'react-router-dom';
 
 import './global.css';
@@ -5,6 +6,8 @@ import './global.css';
 import { CustomRoute } from './types/types';
 import { About, Blog, Contact, Download, Games, Home } from './pages';
 import Navbar from './components/navbar/Navbar';
+import ErrorBoundary from './ErrorBoundary';
+import NotFound from './pages/errorHangling/NotFound';
 
 // Route configuration
 const routeConfig: CustomRoute[] = [
@@ -15,6 +18,7 @@ const routeConfig: CustomRoute[] = [
   { path: '/contact', element: <Contact /> },
   { path: '/download', element: <Download /> },
   { path: '/games', element: <Games /> },
+  { path: '*', element: <NotFound /> },
   // More routes if needed
 ];
 
@@ -29,10 +33,13 @@ const App: React.FC = () => {
   return (
     <main>
       <Navbar />
-      <Routes>
-        {/* Render routes dynamically */}
-        {generateRoutes()}
-      </Routes>
+      <ErrorBoundary>
+        {/* Wrap Routes with ErrorBoundary */}
+        <Routes>
+          {/* Render routes dynamically */}
+          {generateRoutes()}
+        </Routes>
+      </ErrorBoundary>
     </main>
   );
 };

@@ -70,6 +70,7 @@ nav .menu span {
   width: 100%;
   background-color: var(--primary-color);
   border-radius: 0.2rem;
+  z-index: 2;
 }
 
 /* Media query for smaller screens */
@@ -81,14 +82,18 @@ nav .menu span {
   nav {
     flex-direction: column;
     align-items: flex-start;
+    z-index: 100;
   }
 
   nav ul {
     display: none;
+    position: absolute;
     flex-direction: column;
     width: 100%;
     margin-bottom: 0.25rem;
     box-shadow: var(--box-shadow);
+    padding-top: 15%;
+    background-color: white;
   }
 
   nav ul.open {
