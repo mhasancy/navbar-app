@@ -4,7 +4,6 @@ import { Routes, Route } from 'react-router-dom';
 import { CustomRoute } from './types';
 import { About, Blog, Contact, Download, Games, Home } from './pages';
 import Navbar from './components/navbar/Navbar';
-import ErrorBoundary from './ErrorBoundary';
 import NotFound from './pages/errorHandling/NotFound';
 
 import './global.css';
