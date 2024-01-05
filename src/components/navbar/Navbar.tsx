@@ -3,7 +3,7 @@ import { Link, NavLink } from 'react-router-dom';
 
 import './Navbar.css';
 
-import { NavbarProps } from '../../types/types';
+import { NavbarProps } from '../../types';
 
 const Navbar: React.FC<NavbarProps> = () => {
   const [menuOpen, setMenuOpen] = useState<boolean>(false);

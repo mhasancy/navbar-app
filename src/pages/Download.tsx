@@ -1,3 +1,5 @@
+import React from 'react';
+
 const Download: React.FC = () => {
   return (
     <div className="page-container">

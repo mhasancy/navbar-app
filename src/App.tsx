@@ -1,13 +1,13 @@
 import React from 'react';
 import { Routes, Route } from 'react-router-dom';
 
-import './global.css';
-
-import { CustomRoute } from './types/types';
+import { CustomRoute } from './types';
 import { About, Blog, Contact, Download, Games, Home } from './pages';
 import Navbar from './components/navbar/Navbar';
 import ErrorBoundary from './ErrorBoundary';
-import NotFound from './pages/errorHangling/NotFound';
+import NotFound from './pages/errorHandling/NotFound';
+
+import './global.css';
 
 // Route configuration
 const routeConfig: CustomRoute[] = [
@@ -34,9 +34,9 @@ const App: React.FC = () => {
     <main>
       <Navbar />
       <ErrorBoundary>
-        {/* Wrap Routes with ErrorBoundary */}
+        {/* Wrapping Routes with ErrorBoundary */}
         <Routes>
-          {/* Render routes dynamically */}
+          {/* Rendering routes dynamically */}
           {generateRoutes()}
         </Routes>
       </ErrorBoundary>

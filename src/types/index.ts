@@ -5,3 +5,11 @@ export interface CustomRoute {
 }
 
 export interface NavbarProps {}
+
+export interface ErrorBoundaryProps {
+  children: React.ReactNode | undefined;
+}
+
+export interface ErrorBoundaryState {
+  hasError: boolean;
+}

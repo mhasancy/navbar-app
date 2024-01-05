@@ -1,3 +1,5 @@
+import React from 'react';
+
 const Games: React.FC = () => {
   return (
     <div className="page-container">
